@@ -1,3 +1,8 @@
+import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
 import { Config } from './schemas/config';
 
-export { Config };
+const schemas = validationMetadatasToSchemas({
+  refPointerPrefix: '#/components/schemas/',
+});
+
+export { Config, schemas };

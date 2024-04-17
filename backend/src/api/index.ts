@@ -1,8 +1,5 @@
-import { Router } from 'express';
-import { configRouter } from './config/config.router';
+import { ConfigController } from './config/config.controller';
 
-const apiRouter = Router();
+const controllers = [ConfigController];
 
-apiRouter.use('/config', configRouter);
-
-export { apiRouter };
+export { controllers };

@@ -1,8 +1,7 @@
-// server.ts
-import { createServer } from 'http';
 import express, { json, urlencoded } from 'express';
-import { apiRouter } from './api';
 import morgan from 'morgan';
+import { useExpressServer } from 'routing-controllers';
+import { controllers } from './api';
 
 export const server = async () => {
   const app = express();
@@ -12,18 +11,12 @@ export const server = async () => {
   app.use(json());
   app.use(morgan('tiny'));
 
-  // Add API router
-  app.use('/api', apiRouter);
-
-  // Base route for debugging
-  // TODO: Refactor to point to swagger
-  app.get('/', (req, res) => {
-    res.send('Hello brother!');
+  useExpressServer(app, {
+    routePrefix: '/api',
+    controllers: controllers,
   });
 
-  const server = createServer(app);
-
-  server.listen(4000, () => {
+  app.listen(4000, () => {
     console.log(`Server running in 4000`);
   });
 };

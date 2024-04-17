@@ -1,9 +1,16 @@
 // server.ts
 import { createServer } from 'http';
-import express from 'express';
+import express, { json, urlencoded } from 'express';
+import { apiRouter } from './api';
 
 export const server = async () => {
   const app = express();
+
+  app.use(urlencoded({ extended: true }));
+
+  app.use(json());
+
+  app.use('/api', apiRouter);
 
   app.get('/', (req, res) => {
     res.send('Hello brother!');

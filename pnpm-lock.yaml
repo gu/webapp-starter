@@ -50,9 +50,9 @@ importers:
       '@types/multer':
         specifier: ^1.4.11
         version: 1.4.11
-      api-types:
+      api-schemas:
         specifier: workspace:*
-        version: link:../packages/api-types
+        version: link:../packages/api-schemas
       body-parser:
         specifier: ^1.20.2
         version: 1.20.2
@@ -91,7 +91,7 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
 
-  packages/api-types: {}
+  packages/api-schemas: {}
 
 packages:
 

@@ -1,4 +1,4 @@
-export interface IConfig {
+export interface Config {
   version: string;
   environment: string;
 }

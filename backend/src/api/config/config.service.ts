@@ -1,7 +1,7 @@
-import { IConfig } from 'api-types';
+import { Config } from 'api-schemas';
 
 class ConfigService {
-  public async getConfig(): Promise<IConfig> {
+  public async getConfig(): Promise<Config> {
     // TODO: pull from env
     return {
       version: 'local',

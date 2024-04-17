@@ -3,8 +3,8 @@ import { configController } from './config.controller';
 
 const configRouter = Router();
 
-configRouter.get('/', (req, res) => {
-  const config = configController.getConfig();
+configRouter.get('/', async (req, res) => {
+  const config = await configController.getConfig();
   res.json(config);
 });
 

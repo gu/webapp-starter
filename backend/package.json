@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "swc src --out-dir dist",
+    "build": "npm run swagger && swc src --out-dir dist",
     "start": "node dist/src/index.js",
-    "dev": "nodemon --watch src --ext ts --exec 'npm run build && npm start'"
+    "dev": "nodemon --watch src --ext ts --exec 'npm run swagger && npm run build && npm start'",
+    "swagger": "tsoa spec"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +16,10 @@
   "dependencies": {
     "@swc/cli": "^0.3.12",
     "@swc/core": "^1.4.14",
+    "@types/morgan": "^1.9.9",
     "api-types": "workspace:*",
     "express": "^4.19.2",
+    "morgan": "^1.10.0",
     "typescript": "^5.4.5"
   },
   "devDependencies": {

@@ -2,8 +2,8 @@ import { IConfig } from 'api-types';
 import { configService } from './config.service';
 
 class ConfigController {
-  public getConfig(): IConfig {
-    return configService.getConfig();
+  public async getConfig(): Promise<IConfig> {
+    return await configService.getConfig();
   }
 }
 

@@ -1,7 +1,7 @@
 import { IConfig } from 'api-types';
 
 class ConfigService {
-  public getConfig(): IConfig {
+  public async getConfig(): Promise<IConfig> {
     return {
       version: 'local',
       environment: 'local',

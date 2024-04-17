@@ -12,10 +12,12 @@ export const server = async () => {
   app.use(morgan('tiny'));
 
   useExpressServer(app, {
+    // TODO: add prefix to env
     routePrefix: '/api',
     controllers: controllers,
   });
 
+  // TODO: add port to env
   app.listen(4000, () => {
     console.log(`Server running in 4000`);
   });

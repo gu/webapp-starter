@@ -1,13 +1,10 @@
-import 'reflect-metadata';
 import { Config } from 'api-schemas';
 import { configService } from './config.service';
-import { Get, JsonController } from 'routing-controllers';
-import { ResponseSchema } from 'routing-controllers-openapi';
+import { Get, Route } from 'tsoa';
 
-@JsonController('/config')
+@Route('config')
 export class ConfigController {
-  @Get('/')
-  @ResponseSchema(Config)
+  @Get('')
   public async getConfig(): Promise<Config> {
     return await configService.getConfig();
   }

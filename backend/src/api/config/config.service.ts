@@ -1,11 +1,13 @@
 import { Config } from 'api-schemas';
+import { getEnv } from '../../env';
+
+const env = getEnv();
 
 class ConfigService {
   public async getConfig(): Promise<Config> {
-    // TODO: pull from env
     return {
-      version: 'local',
-      environment: 'local',
+      version: env.API_VERSION,
+      environment: env.ENVIRONMENT,
     };
   }
 }

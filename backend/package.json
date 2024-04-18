@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsoa spec-and-routes && swc src build -d dist --copy-files",
+    "build": "npm run clean && tsoa spec-and-routes --basePath /api && swc src build -d dist --copy-files",
     "start": "node dist/src/index.js",
     "dev": "nodemon --watch src --ext ts --exec 'npm run build && npm start'"
   },
@@ -26,6 +26,8 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "class-validator-jsonschema": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "envalid": "^8.0.0",
     "express": "^4.19.2",
     "morgan": "^1.10.0",
     "multer": "1.4.5-lts.1",

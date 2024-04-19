@@ -8,6 +8,7 @@ class ConfigService {
     return {
       version: env.API_VERSION,
       environment: env.ENVIRONMENT,
+      banner: env.BANNER,
     };
   }
 }

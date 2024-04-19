@@ -16,6 +16,7 @@ const models: TsoaRoute.Models = {
         "properties": {
             "version": {"dataType":"string","required":true},
             "environment": {"dataType":"string","required":true},
+            "banner": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },

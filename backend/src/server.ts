@@ -4,6 +4,7 @@ import swaggerJSON from '../build/swagger.json';
 import * as swaggerUI from 'swagger-ui-express';
 import { RegisterRoutes } from '../build/routes';
 import { getEnv } from './env';
+import cors from 'cors';
 
 const env = getEnv();
 
@@ -13,6 +14,7 @@ export const server = async () => {
   // General Middleware
   app.use(urlencoded({ extended: true }));
   app.use(json());
+  app.use(cors());
   app.use(morgan('tiny'));
 
   const apiRouter = Router();

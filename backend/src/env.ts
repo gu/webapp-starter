@@ -6,6 +6,8 @@ const env = cleanEnv(process.env, {
   ENVIRONMENT: str({ default: 'local' }),
 
   PORT: num({ default: 3000 }),
+
+  BANNER: str({ default: 'NOT CONFIGURED' }),
 });
 
 export const getEnv = () => {

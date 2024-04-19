@@ -14,11 +14,15 @@
 					},
 					"environment": {
 						"type": "string"
+					},
+					"banner": {
+						"type": "string"
 					}
 				},
 				"required": [
 					"version",
-					"environment"
+					"environment",
+					"banner"
 				],
 				"type": "object",
 				"additionalProperties": false

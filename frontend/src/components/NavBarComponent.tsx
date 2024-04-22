@@ -7,8 +7,8 @@ import {
   Button,
   Fade,
 } from '@chakra-ui/react';
-import { useNavBarStore } from '../hooks/store/useNavBarStore';
-import useConfig from '../hooks/api/useConfig';
+import { useNavBarStore } from '@hooks/store/useNavBarStore';
+import useConfig from '@hooks/api/useConfig';
 import { IconHome, IconSwitchHorizontal } from '@tabler/icons-react';
 
 type NavBarButtonComponentProps = {

@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
-import BaseLayout from './BaseLayout';
+import BaseLayout from '@layouts/BaseLayout';
 import { Flex } from '@chakra-ui/react';
-import NavBarComponent from '../components/NavBarComponent';
+import NavBarComponent from '@components/NavBarComponent';
 
 export default function NavBarLayout({ children }: PropsWithChildren) {
   return (

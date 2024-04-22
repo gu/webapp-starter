@@ -1,8 +1,8 @@
 import { Box, Center, Flex } from '@chakra-ui/react';
-import BannerComponent from '../components/BannerComponent';
+import BannerComponent from '@components/BannerComponent';
 import { PropsWithChildren } from 'react';
-import useConfig from '../hooks/api/useConfig';
-import AppLoadingComponent from '../components/AppLoadingComponent';
+import useConfig from '@hooks/api/useConfig';
+import AppLoadingComponent from '@components/AppLoadingComponent';
 
 export default function BaseLayout({ children }: PropsWithChildren) {
   const { config, isPending } = useConfig();

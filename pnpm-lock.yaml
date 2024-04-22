@@ -202,6 +202,9 @@ importers:
       vite:
         specifier: ^5.2.0
         version: 5.2.9(@types/node@20.12.7)(sugarss@4.0.1(postcss@8.4.38))
+      vite-tsconfig-paths:
+        specifier: ^4.3.2
+        version: 4.3.2(typescript@5.4.5)(vite@5.2.9(@types/node@20.12.7)(sugarss@4.0.1(postcss@8.4.38)))
 
   packages/api-schemas:
     dependencies:
@@ -2286,6 +2289,9 @@ packages:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}
     engines: {node: '>=10'}
 
+  globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+
   gopd@1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
 
@@ -3465,6 +3471,16 @@ packages:
       '@swc/wasm':
         optional: true
 
+  tsconfck@3.0.3:
+    resolution: {integrity: sha512-4t0noZX9t6GcPTfBAbIbbIU4pfpCwh0ueq3S4O/5qXI1VwK1outmxhe9dOiEWqMz3MW2LKgDTpqWV+37IWuVbA==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    peerDependencies:
+      typescript: ^5.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   tslib@2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
@@ -3595,6 +3611,14 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  vite-tsconfig-paths@4.3.2:
+    resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
+    peerDependencies:
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
 
   vite@5.2.9:
     resolution: {integrity: sha512-uOQWfuZBlc6Y3W/DTuQ1Sr+oIXWvqljLvS881SVmAj00d5RdgShLcuXWxseWPd4HXwiYBFW/vXHfKFeqj9uQnw==}
@@ -6307,6 +6331,8 @@ snapshots:
       merge2: 1.4.1
       slash: 3.0.0
 
+  globrex@0.1.2: {}
+
   gopd@1.0.1:
     dependencies:
       get-intrinsic: 1.2.4
@@ -7500,6 +7526,10 @@ snapshots:
     optionalDependencies:
       '@swc/core': 1.4.16
 
+  tsconfck@3.0.3(typescript@5.4.5):
+    optionalDependencies:
+      typescript: 5.4.5
+
   tslib@2.4.0: {}
 
   tslib@2.6.2: {}
@@ -7625,6 +7655,17 @@ snapshots:
   validator@13.11.0: {}
 
   vary@1.1.2: {}
+
+  vite-tsconfig-paths@4.3.2(typescript@5.4.5)(vite@5.2.9(@types/node@20.12.7)(sugarss@4.0.1(postcss@8.4.38))):
+    dependencies:
+      debug: 4.3.4(supports-color@5.5.0)
+      globrex: 0.1.2
+      tsconfck: 3.0.3(typescript@5.4.5)
+    optionalDependencies:
+      vite: 5.2.9(@types/node@20.12.7)(sugarss@4.0.1(postcss@8.4.38))
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   vite@5.2.9(@types/node@20.12.7)(sugarss@4.0.1(postcss@8.4.38)):
     dependencies:

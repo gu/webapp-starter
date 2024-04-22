@@ -9,12 +9,23 @@ import {
 } from '@chakra-ui/react';
 import { useNavBarStore } from '@hooks/store/useNavBarStore';
 import useConfig from '@hooks/api/useConfig';
-import { IconHome, IconSwitchHorizontal } from '@tabler/icons-react';
+import {
+  IconHome,
+  IconSettings,
+  IconSwitchHorizontal,
+} from '@tabler/icons-react';
+import { useNavigate } from 'react-router-dom';
 
 type NavBarButtonComponentProps = {
   name: string;
   icon: JSX.Element;
   onClick: () => void;
+};
+
+type NavBarButtonLinkProps = {
+  name: string;
+  path: string;
+  icon: JSX.Element;
 };
 
 function NavBarButtonComponent({
@@ -47,9 +58,23 @@ function NavBarButtonComponent({
 }
 
 export default function NavBarComponent() {
+  const navigate = useNavigate();
   const { config } = useConfig();
   const isOpen = useNavBarStore((state) => state.isOpen);
   const toggleIsOpen = useNavBarStore((state) => state.toggleIsOpen);
+
+  const navLinks: NavBarButtonLinkProps[] = [
+    {
+      name: 'Home',
+      path: '/',
+      icon: <IconHome />,
+    },
+    {
+      name: 'Config',
+      path: '/config',
+      icon: <IconSettings />,
+    },
+  ];
 
   return (
     <Flex
@@ -78,11 +103,18 @@ export default function NavBarComponent() {
       <Flex direction="column" grow={1}>
         {/* Top Nav Buttons */}
         <Flex direction="column" grow={1}>
-          <NavBarButtonComponent
-            name="Home"
-            icon={<IconHome />}
-            onClick={() => {}}
-          />
+          {navLinks.map((navLink) => {
+            return (
+              <NavBarButtonComponent
+                key={navLink.path}
+                name={navLink.name}
+                icon={navLink.icon}
+                onClick={() => {
+                  navigate(navLink.path);
+                }}
+              />
+            );
+          })}
         </Flex>
         {/* Bottom Nav Buttons */}
         <Flex direction="column">

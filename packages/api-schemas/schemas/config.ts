@@ -3,4 +3,6 @@ export class Config {
   environment: string;
 
   banner: string;
+
+  appName: string;
 }

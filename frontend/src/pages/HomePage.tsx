@@ -1,11 +1,11 @@
-import BaseLayout from '../layouts/BaseLayout';
+import NavBarLayout from '../layouts/NavBarLayout';
 
 export default function HomePage() {
   return (
-    <BaseLayout>
+    <NavBarLayout>
       <>
         <h1 className="text-3xl font-bold underline">Home page</h1>
       </>
-    </BaseLayout>
+    </NavBarLayout>
   );
 }

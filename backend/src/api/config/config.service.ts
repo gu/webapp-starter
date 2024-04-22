@@ -9,6 +9,7 @@ class ConfigService {
       version: env.API_VERSION,
       environment: env.ENVIRONMENT,
       banner: env.BANNER,
+      appName: env.APP_NAME,
     };
   }
 }

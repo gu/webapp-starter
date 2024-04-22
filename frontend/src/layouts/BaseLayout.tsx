@@ -1,11 +1,11 @@
 import { Box, Center, Flex } from '@chakra-ui/react';
 import BannerComponent from '../components/BannerComponent';
 import { PropsWithChildren } from 'react';
-import useConfig from '../hooks/useConfig';
+import useConfig from '../hooks/api/useConfig';
 import AppLoadingComponent from '../components/AppLoadingComponent';
 
 export default function BaseLayout({ children }: PropsWithChildren) {
-  const { data: config, isPending } = useConfig();
+  const { config, isPending } = useConfig();
   return (
     <Flex height="100vh" width="100vw" direction="column">
       {!config && (
@@ -16,7 +16,7 @@ export default function BaseLayout({ children }: PropsWithChildren) {
       {config && (
         <>
           <BannerComponent height="25px" content={config.banner} />
-          <Box height="calc(100vh - 50px)" overflow="hidden">
+          <Box height="calc(100% - 50px)" overflow="hidden">
             {children}
           </Box>
           <BannerComponent height="25px" content={config.banner} />

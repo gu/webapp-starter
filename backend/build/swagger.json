@@ -17,12 +17,16 @@
 					},
 					"banner": {
 						"type": "string"
+					},
+					"appName": {
+						"type": "string"
 					}
 				},
 				"required": [
 					"version",
 					"environment",
-					"banner"
+					"banner",
+					"appName"
 				],
 				"type": "object",
 				"additionalProperties": false

@@ -8,6 +8,8 @@ const env = cleanEnv(process.env, {
   PORT: num({ default: 3000 }),
 
   BANNER: str({ default: 'NOT CONFIGURED' }),
+
+  APP_NAME: str({ default: 'Webapp Starter' }),
 });
 
 export const getEnv = () => {

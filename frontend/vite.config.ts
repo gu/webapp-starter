@@ -8,6 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
+        // TODO: see if we can set the API port via an env var in a single spot for backend and frontend
         target: 'http://localhost:3000',
         changeOrigin: true,
       },

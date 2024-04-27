@@ -1,3 +1,9 @@
 import { server } from './server';
+import { initDb } from './db';
 
-server();
+const init = async () => {
+  await initDb();
+  await server();
+};
+
+init();

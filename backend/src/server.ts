@@ -1,8 +1,8 @@
 import express, { Router, json, urlencoded } from 'express';
 import morgan from 'morgan';
-import swaggerJSON from '../build/swagger.json';
+import swaggerJSON from '../build/tsoa/swagger.json';
 import * as swaggerUI from 'swagger-ui-express';
-import { RegisterRoutes } from '../build/routes';
+import { RegisterRoutes } from '../build/tsoa/routes';
 import { getEnv } from './env';
 import cors from 'cors';
 

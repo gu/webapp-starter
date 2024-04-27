@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf dist",
-    "build": "npm run clean && tsoa spec-and-routes --basePath /api && swc src build -d dist --copy-files",
-    "start": "node dist/src/index.js",
-    "dev": "nodemon --watch src --ext ts --exec 'npm run build && npm start'"
+    "build:clean": "rm -rf dist",
+    "build:tsoa": "tsoa spec-and-routes --basePath /api",
+    "build:drizzle": "drizzle-kit generate:pg --config ./src/db/drizzle.config.ts",
+    "build:swc": "swc src build -d dist --copy-files",
+    "build:dev": "npm run build:clean && npm run build:tsoa && npm run build:swc",
+    "build:prod": "npm run build:clean && npm run build:tsoa && npm run build:drizzle && npm run build:swc",
+    "start:dev": "nodemon --watch src --ext ts --exec 'npm run build:dev && node dist/src/index.js'",
+    "start:prod": "npm run migrate:up && node dist/src/index.js",
+    "migrate:up": "node dist/src/db/migrate.js"
   },
   "keywords": [],
   "author": "",
@@ -28,10 +32,12 @@
     "class-validator-jsonschema": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.30.9",
     "envalid": "^8.0.0",
     "express": "^4.19.2",
     "morgan": "^1.10.0",
     "multer": "1.4.5-lts.1",
+    "pg": "^8.11.5",
     "swagger-ui-express": "^5.0.0",
     "ts-node": "^10.9.2",
     "tsoa": "^6.2.0",
@@ -41,6 +47,8 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/node": "^20.12.7",
+    "@types/pg": "^8.11.5",
+    "drizzle-kit": "^0.20.17",
     "nodemon": "^3.1.0"
   }
 }

@@ -17,9 +17,10 @@ export const server = async () => {
   app.use(cors());
   app.use(morgan('tiny'));
 
+  app.use(express.static('public'));
+
   const apiRouter = Router();
   RegisterRoutes(apiRouter);
-
   app.use('/api', apiRouter);
 
   app.use(`/api/docs`, swaggerUI.serve, swaggerUI.setup(swaggerJSON));

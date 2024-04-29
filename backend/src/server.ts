@@ -17,6 +17,7 @@ export const server = async () => {
   app.use(cors());
   app.use(morgan('tiny'));
 
+  // TODO: make this configurable?
   app.use(express.static('public'));
 
   const apiRouter = Router();
